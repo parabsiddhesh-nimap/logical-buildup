@@ -121,3 +121,122 @@ function sqrt(n){
     return n**0.5
 };
 // console.log(sqrt(81));
+
+let greet = (name,lastname = '') => {
+    console.log(`Welcome !!! ${name.toUpperCase()} ${lastname.toUpperCase()}`)
+};
+// greet('siddhesh','Parab');
+// -----------------------------------------------------------------------------------------
+let sqaure = (n) => {
+    n > 1 ? console.log(n*n) : console.log('invalid number');
+    // console.log(n*n)
+    // return n * n;
+};
+// sqaure(2)
+// -----------------------------------------------------------------------------------------
+let n = 5;
+const person = {
+    name: "Siddhesh",
+    lastname:"Parab",
+    Age:21,
+    Location:"Mumbai"
+}
+
+// for (let i in person)
+//     console.log(person[i]);
+
+// console.log('Hello')
+
+function maxOfTwo(a,b){
+    a > b ?  console.log(`${a} is greater`) : console.log(`${b} is greater`)
+} 
+// maxOfTwo(10,12)
+
+const isLastScape = (width,heigth) => {
+    width > heigth ? console.log("isLastScape") : console.log("IsPortrait")
+};
+
+// isLastScape(450,800)
+// -----------------------------------------------------------------------------------------
+
+//Add Two Array of dufferent lengths
+let arr = [1,2,3,3,4, ];
+let arr1 = [2,1,3,3,2];
+
+function addArray(arr,arr2){
+    let newArr = [];
+    if(arr.length === arr2.length){
+        for (let i = 0; i < arr.length;i++){
+            let addedNum = arr[i] + arr2[i];
+            newArr.push(addedNum)
+        }
+        // console.log(newArr)
+    }else if(arr.length !== arr2.length){
+        if(arr.length > arr2.length) {
+            for (let i = 0; i < arr.length;i++){
+                if(arr2[i]){
+                    let addedNum = arr[i] + arr2[i];
+                    newArr.push(addedNum)
+                }else if(arr2[i] === undefined){
+                    arr2[i] = 0;
+                    addedNum = arr[i] + arr2[i];
+                    newArr.push(addedNum)
+                }
+            }
+        }else {
+            for (let i = 0; i < arr2.length;i++){
+                if(arr[i]){
+                    let addedNum = arr[i] + arr2[i];
+                    newArr.push(addedNum)
+                }else if(arr[i] === undefined){
+                    arr[i] = 0;
+                    addedNum = arr[i] + arr2[i];
+                    newArr.push(addedNum)
+                }
+            }
+        }
+    } 
+    console.log(newArr)
+}
+// addArray(arr,arr1)
+
+//Sum of numbers that are divisible by 3 and 5 till the given argument
+function sum(n){
+    let sum = 0;
+    for (let i = 0;i<=n;i++){
+        if (i%3 === 0 || i%5===0) sum += i
+    }
+    console.log(sum)
+    return sum;
+}
+// sum(10)
+
+function grade(arr){
+    let avg = 0;
+    let count = 0;
+    for (let num of arr){
+        avg+=num;
+        count++
+    }
+    avg = avg/count; 
+    console.log(avg);
+    if(avg>1 && avg<59) console.log('F Grade');
+    if(avg>=60 && avg<69) console.log('D Grade');
+    if(avg>=70 && avg<79) console.log('C Grade');
+    if(avg>=80 && avg<89) console.log('B Grade');
+    if(avg>=90 && avg<100) console.log('A Grade');
+};
+// grade([70,70,80,20]);
+
+//Reverse Star Pattern
+function showStars(rows){
+    for (let i =1;i<=rows;i++){
+        let char = "";
+        for(let j = 0;j<i;j++) 
+            char += "*"
+        console.log(char)
+    }
+};
+// showStars(10);
+
+
