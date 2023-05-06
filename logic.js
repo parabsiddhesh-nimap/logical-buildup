@@ -160,8 +160,8 @@ const isLastScape = (width,heigth) => {
 // -----------------------------------------------------------------------------------------
 
 //Add Two Array of dufferent lengths
-let arr = [1,2,3,3,4, ];
-let arr1 = [2,1,3,3,2];
+let arr1 = [1,2,3,3,4, ];
+let arr2 = [2,1,3,3,2];
 
 function addArray(arr,arr2){
     let newArr = [];
@@ -198,7 +198,7 @@ function addArray(arr,arr2){
     } 
     console.log(newArr)
 }
-// addArray(arr,arr1)
+// addArray(arr1,arr2)
 
 //Sum of numbers that are divisible by 3 and 5 till the given argument
 function sum(n){
@@ -239,4 +239,78 @@ function showStars(rows){
 };
 // showStars(10);
 
+//Prime Numbers Between two Numbers
+function showPrime(n=100){
+    for (let i = 2;i<=n;i++){
+        let isPrime = true;
+        for (let j = 2;j<i;j++){
+            if(i%j === 0) isPrime=false;
+        }
+        if(isPrime) console.log(i);
+    }
+}
+// showPrime();
+
+//factory Function
+function FactoryFunc(name,location = "Mumbai"){
+    return {
+        name,
+        location,
+        draw : function draw(){
+            return console.log('Hi')
+        }
+    }
+}
+// console.log(FactoryFunc())
+
+const personData = (firstName) => {
+    firstName = this.firstName
+}
+const person1 = {
+    firstName:"John",
+    lastName: "Doe"
+}
+const person2 = {
+    firstName:"Mary",
+    lastName: "Doe"
+}
+
+for(let key of Object.values(person1)){
+    // console.log(key)
+}
+let data = personData.call({},1);
+// console.log(personData);
+// console.log(personData.firstname.call(person1)), 
+//   console.log(data); 
+//   console.log(person1.firstName); 
+
+
+let a1 = [2,4,1,3];
+let b1 = [1,2,4,3];
+// console.log(a.includes(5))
+function compareTwoArrays(a,b){
+    let isArraySame = false;
+    if(a.length === b.length){
+       for(let i = 0;i < a.length;i++){
+            if(a.includes(b[i])) isArraySame=true;
+            else isArraySame=false;
+        }      
+    console.log(isArraySame);
+    return isArraySame;
+    }
+console.log(isArraySame);
+return isArraySame;
+}
+// compareTwoArrays(a1,b1);
+
+
+
+let name = "siddhesh"
+name = "sdidd"
+// const 
+
+const password = "sidasidi";
+// PI = 2325 
+console.log(password);
+// console.log(name)
 
